@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ReuseButton from "../../component/ReuseButton";
+import { Link } from "react-router-dom";
 
 const User = () => {
     const [userlists, setUserLists] = useState([]);
@@ -24,7 +25,6 @@ const User = () => {
             console.log(error.message);
         };
     };
-
 
 
     return (
@@ -54,8 +54,14 @@ const User = () => {
                             <td>{user.user_name}</td>
                             <td>{user.user_nohp}</td>
                             <td>{user.user_password}</td>
-                            <div className="btn btn-danger"
+                            <div className="btn bg-danger btn-danger"
                                 onClick={() => destroyUser(user.id)}>Hapus</div>
+                            <Link
+                                to={`/user/edit/${user.id}`}
+                                className="button is-small is-info mr-2"
+                            >
+                                Edit
+                            </Link>
                         </tr>
                     ))}
                 </tbody>
