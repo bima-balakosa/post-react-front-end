@@ -17,8 +17,8 @@ function Sidebar({ children }) {
             icon: <FaShoppingBasket />,
         },
         {
-            path: "/product-list",
-            name: "ProductList",
+            path: "/transaction",
+            name: "Transaction",
             icon: <FaThList />,
         },
     ];
